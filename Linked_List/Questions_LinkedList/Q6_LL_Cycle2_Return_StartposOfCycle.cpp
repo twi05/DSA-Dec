@@ -26,15 +26,12 @@ bool hascycle(ListNode *head, int *length)
         slow = slow->next;
         if (fast == slow)
         {
-
             slow = slow->next;
             (*length)++;
-
             while (fast != slow)
             {
                 (*length)++;
             }
-
             return true;
         }
     }
@@ -63,17 +60,16 @@ ListNode *detectCycle(ListNode *head)
     }
 }
 
-void increase(int *length)
+void increase(int *length,int i)
 {
-    for (int i = 0; i < 10; i++)
-    {
+    if(i<10)
         (*length)++;
-    }
+    increase(length, i+1);
 }
 int main()
 {
     int length = 0;
-    increase(&length);
+    increase(&length,0);
     cout << length;
     return 0;
 }

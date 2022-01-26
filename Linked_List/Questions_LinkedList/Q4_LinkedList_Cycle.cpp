@@ -27,7 +27,7 @@ bool hasCycle(ListNode *head)
             if(slow->next!=NULL){
             slow = slow->next;
             }
-            else 
+            else
             return false;
 
             if(fast->next!=NULL && fast!=NULL){
@@ -38,21 +38,22 @@ bool hasCycle(ListNode *head)
 }
 */
 bool hasCycle(ListNode *head)
+{
+
+    struct ListNode *slow = head;
+    struct ListNode *fast = head;
+
+    while (fast != NULL && fast->next != NULL)
     {
-
-                struct ListNode* slow = head;
-        struct ListNode* fast = head;
-
-    while(fast!=NULL && fast->next!=NULL)
-    {      fast = fast->next->next;
-             slow = slow->next;
-        if(fast == slow){
+        fast = fast->next->next;
+        slow = slow->next;
+        if (fast == slow)
+        {
             return true;
         }
-
     }
     return false;
-    }
+}
 int main()
 {
     cout << hasCycle(head);

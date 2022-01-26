@@ -17,7 +17,6 @@ bool isHappy(int n)
 
     int slow = n;
     int fast = n;
-
     do
     {
         slow = square_of_digits(slow);
@@ -28,14 +27,14 @@ bool isHappy(int n)
             return true;
         } 
     } while (slow != fast);
-
     return false;
 }
 
 int main()
 {
 
-    cout << isHappy(19);
+    cout << isHappy(5555);
     // cout<<square_of_digits(150);
     return 0;
 }
+

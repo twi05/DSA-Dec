@@ -103,12 +103,9 @@ ListNode *reverse_LL_iterative_kk(ListNode *head)
 
     while (present != NULL)
     {
-
         present->next = prev;
-
         prev = present;
         present = next;
-
         if (next != NULL)
         {
             next = next->next;
@@ -119,7 +116,6 @@ ListNode *reverse_LL_iterative_kk(ListNode *head)
 
 int main()
 {
-
     for (int i = 0; i <= 100; i++)
     {
         head = insertLast(head, i);

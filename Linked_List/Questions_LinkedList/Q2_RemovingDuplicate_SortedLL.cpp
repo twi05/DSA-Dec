@@ -53,7 +53,6 @@ void deleteFirst()
 
 void removeDuplicates()
 {
-
     struct Node *ptr = head;
     int lastValue = 0;
 

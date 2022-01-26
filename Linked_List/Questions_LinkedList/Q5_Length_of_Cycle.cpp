@@ -29,8 +29,6 @@ int length_of_LL(ListNode *head)
 
     int main()
     {
-
         cout << length_of_LL(head);
-
         return 0;
     }

@@ -30,40 +30,32 @@ void display()
 
 struct Node *deleteDuplicates(struct Node *head)
 {
-    struct Node *current = head;
+    Node *curr = head;
+    Node *next = curr->next;
 
-    while (current->next != NULL)
+    while (curr->next != NULL)
     {
-         struct Node *  ptr = current->next;
-        if (current->data == ptr->data)
+        if (curr->data == next->data)
         {
-            current->next = ptr->next;
-            
+            curr->next = next->next;
+            // curr = curr->next;
+            if (curr->next != NULL)
+                next = curr->next;
         }
         else
-            current = ptr;
-        current = current->next;
-        delete ptr;
+        {
+            curr = next;
+            if (next->next != NULL)
+                next = next->next;
+        }
     }
-    /*
-    while (current->next != NULL)
-    {
-               ListNode *ptr =current->next;
-          if(current->val == ptr->val){
-              current->next = ptr->next;
-          }
-          else
-          current =ptr;
-         delete ptr;
-    }
-    */
     return head;
 }
 
 int main()
 {
 
-    insert(2);
+   insert(2);
     insert(2);
     insert(2);
     insert(2);
@@ -93,13 +85,13 @@ int main()
     insert(4);
     insert(4);
     insert(4);
-
     display();
     // removeDuplicates();
     head = deleteDuplicates(head);
     cout << endl;
     cout << endl;
     cout << endl;
+    cout << "Removed Duplicates:\n";
     display();
 
     return 0;

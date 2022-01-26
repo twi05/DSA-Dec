@@ -79,7 +79,6 @@ ListNode *mergeTwoLists(ListNode *list1, ListNode *list2)
 
     else
         mergedList->next = ptr2;
-
     return res->next;
 }
 

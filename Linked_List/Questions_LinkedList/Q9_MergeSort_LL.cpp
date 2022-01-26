@@ -94,10 +94,8 @@ ListNode *mergeTwoLists(ListNode *list1, ListNode *list2)
     {
         mergedList->next = list1;
     }
-
     else
         mergedList->next = list2;
-
     return res->next;
 }
 
