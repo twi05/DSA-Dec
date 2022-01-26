@@ -83,14 +83,11 @@ ListNode *reverseLL(ListNode *head)
 
 bool isPalindrome(ListNode *head, ListNode *mid)
 {
-
     ListNode *secondHead = mid;
     ListNode *ptr1 = head;
     ListNode *ptr2 = mid;
-
     while (ptr2 != NULL)
     {
-
         if (ptr1->val != ptr2->val)
         {
             break;
@@ -98,9 +95,7 @@ bool isPalindrome(ListNode *head, ListNode *mid)
         ptr1 = ptr1->next;
         ptr2 = ptr2->next;
     }
-
     reverseLL(secondHead);
-
     return head == NULL || ptr2 == NULL;
 }
 
